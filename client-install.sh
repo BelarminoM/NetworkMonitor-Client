@@ -1,16 +1,17 @@
 # echo "Changing password"
+# sudo useradd client
 # passwd -d -u client
 # chage -d0 client
 # echo "client:client" | sudo chpasswd
 
 echo "Updating apt"
-sudo apt -y update > /dev/null
+sudo apt-get -y update > /dev/null
 
 echo "Installing JRE"
-sudo apt -y install default-jre  > /dev/null
+sudo apt-get -y install default-jre  > /dev/null
 
 echo "Executing cliente.jar"
-sudo java -jar cliente.jar
+sudo java -jar /home/vagrant/cliente.jar &
 
 echo "Vagrant finish installing"
 echo "Installing Network Monitor Client"
